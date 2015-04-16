@@ -26,25 +26,31 @@ public class LoginFrame extends JFrame{
 		}
 		
 		JPanel mainPanel = new JPanel();
+		Box mainBox = Box.createVerticalBox();
 		Box htemp = Box.createHorizontalBox();
-		Box vtemp = Box.createVerticalBox();  
-		Box buttonBox = Box.createVerticalBox();
+		Box vtext = Box.createVerticalBox();  
+		Box buttonBox = Box.createHorizontalBox();
 		
 		userTextField = new JTextField();
 		userTextField.setPreferredSize(new Dimension(150,25));
 		
 		pwdTextField  = new JTextField();
 		pwdTextField.setPreferredSize(new Dimension(150,25));
-		vtemp.add(userTextField);
-		vtemp.add(pwdTextField);
+		vtext.add(userTextField);
+		vtext.add(pwdTextField);
 		JLabel loginIcon = new JLabel(new ImageIcon("E:\\java\\proj\\javatest\\res\\login.png"));
 		htemp.add(loginIcon);
         htemp.add(Box.createHorizontalStrut(10));
-		htemp.add(vtemp);
+		htemp.add(vtext);
 		
-		mainPanel.add(htemp);
-		mainPanel.add(new JButton("µÇÂ¼"));
-		mainPanel.add(new JButton("×¢²á"));
+		buttonBox.add(Box.createHorizontalStrut(100));
+		buttonBox.add(new JButton("µÇÂ¼"));
+		buttonBox.add(new JButton("×¢²á"));
+		
+		mainBox.add(htemp);
+		mainBox.add(Box.createVerticalStrut(10));
+		mainBox.add(buttonBox);
+		mainPanel.add(mainBox);
 		//mainPanel.setLocationRelativeTo(null);
 		loginFrame.add(mainPanel);
 		loginFrame.setResizable(false);
